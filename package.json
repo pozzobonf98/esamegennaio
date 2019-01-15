@@ -1,0 +1,26 @@
+{
+  "name": "esamegennaio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "body-parser": "^1.18.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --verbose",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pozzobonf98/esamegennaio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pozzobonf98/esamegennaio/issues"
+  },
+  "homepage": "https://github.com/pozzobonf98/esamegennaio#readme"
+}
