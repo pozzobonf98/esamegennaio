@@ -1,80 +1,51 @@
-FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "esameGennaio"
+  description: "ciccio"
+  license: 
+    name: EsameGennaio
+    url: https://github.com/pozzobonf98/esamegennaio.git
+  contact:
+    email: francesco.pozzobon@studenti.unitn.it
+host: esamegennaio.herokuapp.com
+basePath: /
+tags: 
+- name: "AREA"
 
-# esamegennaio
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /getArea:
+    get:
+      tags:
+      - "Area"
+      summary: "Calcolare un'area "
+      description: "Calcolare l'area date le risorse nell'url"
+      operationId: "calculateArea"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Calcolare area"
+        required: true
+        schema:
+          $ref: "#/definitions/area"
+          
+      responses:
+        200:
+          description: "result= smt"
+        400:
+          description: "result= -1" 
+    
+        
+  
+definitions:
 
-Polls is a simple API allowing consumers to view polls and vote in them.
-
-## Questions Collection [/questions]
-
-### List All Questions [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+  area:
+    type: "object"
+    xml:
+      name: "Area"
