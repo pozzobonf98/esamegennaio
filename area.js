@@ -16,7 +16,13 @@ app.get('/getArea', (req,res) =>{
     const base = parseInt(req.query.side2)
     var values = createRectangle(height, base)
     var result = getArea(values)
-    res.json({result: result})
+    if(result == -1){
+        res.status(400)
+        res.json({result: result})
+    }else{      
+        res.status(200)
+        res.json({result: result})
+    }
 })
 
 function createRectangle(height, base){

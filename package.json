@@ -4,9 +4,11 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "node-fetch": "^1.1.0",
     "jest": "^23.6.0",
-    "body-parser": "^1.18.3"
+    "supertest": "^3.3.0"
   },
   "devDependencies": {},
   "scripts": {
